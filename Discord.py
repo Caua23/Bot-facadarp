@@ -99,7 +99,7 @@ tree = app_commands.CommandTree(aclient)
 
 @tree.command(guild=discord.Object(id=id_do_servidor), name='facada_esta_online', description='verifica se o facada esta online')
 
-async def slash_facada_online(interaction: discord.Interaction):
+async def slash_online(interaction: discord.Interaction):
     try:
         headers = {'Client-ID': client_id, 'Authorization': f'Bearer {access_token}'}
         params = {'login': NOME_STREAMER}
@@ -126,70 +126,27 @@ async def slash_facada_online(interaction: discord.Interaction):
 async def slash_sorteie_hl(interaction: discord.Interaction):
         
         numero_girado = random.randint(1, 39)
-        Videos_facada = [
-            'https://www.youtube.com/watch?v=pfJJXxaUFQU',
-            'https://www.youtube.com/watch?v=VSkydvvGObc',
-            'https://www.youtube.com/watch?v=rIpBAREyAqY',
-            'https://www.youtube.com/watch?v=rEKGNrUfyqg',
-            'https://www.youtube.com/watch?v=v4HqCA8wycA',
-            'https://www.youtube.com/watch?v=Y0RCxOcWOjA',
-            'https://www.youtube.com/watch?v=x-cWBJdXChA',
-            'https://www.youtube.com/watch?v=OyNcu9hV-70',
-            'https://www.youtube.com/watch?v=dI-CxrQLI3I',
-            'https://www.youtube.com/watch?v=jnrP4AjCks0',
-            'https://www.youtube.com/watch?v=KfYqHEvqpYU',
-            'https://www.youtube.com/watch?v=s8EbKZ_Lm_s',
-            'https://www.youtube.com/watch?v=xCgxjdTtLdg',
-            'https://www.youtube.com/watch?v=cq4BhuTa7VI',
-            'https://www.youtube.com/watch?v=zivcMhe9Gg8',
-            'https://www.youtube.com/watch?v=qMAmSzqDqEs',
-            'https://www.youtube.com/watch?v=6DExcQAdvQM',
-            'https://www.youtube.com/watch?v=Adlw9QC8b9k',
-            'https://www.youtube.com/watch?v=cWkzu92NiOs',
-            'https://www.youtube.com/watch?v=vUdW0LnvdSc',
-            'https://www.youtube.com/watch?v=G1r5d1Grt1k',
-            'https://www.youtube.com/watch?v=dFSpSSW7LXI',
-            'https://www.youtube.com/watch?v=S7BMtIsxulI',
-            'https://www.youtube.com/watch?v=cJwhu7RHfzw',
-            'https://www.youtube.com/watch?v=YXc-FUS8Q5M',
-            'https://www.youtube.com/watch?v=iIdFOsREjDM',
-            'https://www.youtube.com/watch?v=PlPVIeEJ7_k',
-            'https://www.youtube.com/watch?v=AgjuNEX4ZNY',
-            'https://www.youtube.com/watch?v=2OeWKaqFnX8',
-            'https://www.youtube.com/watch?v=1XetM6cwI80',
-            'https://www.youtube.com/watch?v=u8vlwscOhg0',
-            'https://www.youtube.com/watch?v=a9CUnJB3xwk',
-            'https://www.youtube.com/watch?v=icNtYKx_M4U&t=2s',
-            'https://www.youtube.com/watch?v=CnszPZq4nXg',
-            'https://www.youtube.com/watch?v=qpOx9hJZ_mg',
-            'https://www.youtube.com/watch?v=Uc2ExLiwzdI',
-            'https://www.youtube.com/watch?v=E4wFuLK9wVI&t=44s'
+        Videos = [
+            
+            'https://www.youtube.com/watch?v=icNtYKx_M4U&t=2s'
+            
         ]
 
-        if 1 <= numero_girado <=len(Videos_facada):
-            video_selecionado = Videos_facada[numero_girado - 1]
+        if 1 <= numero_girado <=len(Videos):
+            video_selecionado = Videos[numero_girado - 1]
             await interaction.response.send_message(f'O Hl escolhido Foi {video_selecionado} o Facada é superior no Game')
 
         else:
             await interaction.response.send_message('Erro: Número fora da faixa permitida, Gire denovo.', ephemeral=True)
 
-@tree.command(guild=discord.Object(id=id_do_servidor), name='frase_do_facada', description='ele fala uma frase aleatoria do facada')
+@tree.command(guild=discord.Object(id=id_do_servidor), name='frase_do', description='ele fala uma frase aleatoria do facada')
 async def slash_frase(interaction: discord.Interaction):
     numero_giradoFrase = random.randint(1, 10)
-    Frases_facada = [
-            'To ordidinario',
-            'Cala-boca Biscoiteira',
-            'Cade meu gordo',
-            'Vai tomar no seu cu Rapá',
-            'Se é inferior no game',
-            'Sou superior no game',
-            'Para Tio',
-            'é a grotaaaa,so os verdadeiros irmão que brota',
-            'ei gostoso',
-            'ei gordo, se seguir oq to te falando quando voltar para twtch não vai tomar ban dnv'
+    Frases = [
+            'Frases Aqui'
         ]
-    if 1 <= numero_giradoFrase <=len(Frases_facada):
-        Frase_selecionada = Frases_facada[numero_giradoFrase - 1]
+    if 1 <= numero_giradoFrase <=len(Frases):
+        Frase_selecionada = Frases[numero_giradoFrase - 1]
         await interaction.response.send_message(f'{Frase_selecionada}')
     else:
         await interaction.response.send_message('Erro: Número fora da faixa permitida, Gire denovo.', ephemeral=True)
