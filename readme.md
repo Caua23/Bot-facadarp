@@ -1,6 +1,6 @@
 
 # título-do-projeto
-# [Projeto Bot para o Facadarp_]
+# [Projeto Bot para o Facadarp_
 
 # descrição
 ## Projeto de Desenvolvimento de Bot para Discord: Exploração das APIs do Discord e do Twitter para Fins Educativos
