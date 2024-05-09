@@ -1,5 +1,3 @@
-
-# título-do-projeto
 # Projeto Bot para o Facadarp_
 
 # descrição
